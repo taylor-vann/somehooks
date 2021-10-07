@@ -11,7 +11,7 @@ type ComposedCallback<C extends Function> =
 type CreateCallback = <C extends Function>() => ComposedCallback<C>;
 
 const createCallback: CreateCallback = <C extends Function>() => {
-  let identities: unknown[] | undefined;
+  let identities: unknown[]|undefined;
   let callback: C;
 
   return (updatedCallback: C, identityDelta) => {

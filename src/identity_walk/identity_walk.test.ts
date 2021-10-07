@@ -45,8 +45,8 @@ describe('hasChanged', () => {
         ['hey there', 'A', 1, undefined], ['hey there', 'A', 1, undefined]);
     expect(result).toBe(false);
 
-    const anotherResult = hasChanged(
-        ['you are', 'super awesome'], ['you are', 'super awesome']);
+    const anotherResult =
+        hasChanged(['you are', 'super awesome'], ['you are', 'super awesome']);
     expect(anotherResult).toBe(false);
   });
 });

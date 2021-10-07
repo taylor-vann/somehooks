@@ -19,7 +19,7 @@ There are three categories of hooks:
 *   reactive
 *   custom
 
-All hooks are based on the [createMemo]("./create_memo/README.md") pattern.
+All hooks are based on the [createMemo]("./src/create_memo/README.md") pattern.
 
 ### Passive hooks
 
@@ -27,10 +27,10 @@ Most Hooks are passive hooks and cache the result of an expensive operation.
 
 SomeHooks includes the following passive hooks:
 
-*   [createCallback]("./create_callback/README.md")
-*   [createEffect]("./create_effect/README.md")
-*   [createMemo]("./create_memo/README.md")
-*   [createSelector]("./create_selector/README.md")
+*   [createCallback]("./src/create_callback/README.md")
+*   [createEffect]("./src/create_effect/README.md")
+*   [createMemo]("./src/create_memo/README.md")
+*   [createSelector]("./src/create_selector/README.md")
 
 ### Reactive Hooks
 
@@ -40,8 +40,8 @@ Keep in mind, reactive hooks can cause infinite loops.
 
 SomeHooks includes the following reactive hooks:
 
-*   [createState]("./create_state/README.md")
-*   [createReducer]("./create_reducer/README.md")
+*   [createState]("./src/create_state/README.md")
+*   [createReducer]("./src/create_reducer/README.md")
 
 ### Custom Hooks
 

@@ -6,7 +6,7 @@ CreateEffect manages side effects.
 
 Typescript and Javascript:
 
-```TS
+```ts
 const myEffect = createEffect()
 
 myEffect(() => {
@@ -19,3 +19,8 @@ myEffect(() => {
   }
 }, ["remove", "listener", "when", "identities", "change"])
 ```
+
+### More Passive Hooks
+
+Checkout some more
+[passive hooks](https://github.com/taylor-vann/somehooks#passive-hooks)

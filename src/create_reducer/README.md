@@ -2,11 +2,12 @@
 
 ## CreateReducer
 
-CreateReducer is similar to `createState` but with a Redux-esque reducer function.
+CreateReducer is similar to `createState` but with a Redux-esque reducer
+function.
 
 Typescript:
 
-```TS
+```ts
 interface IncrementAction {
   type: 'INCREMENT';
 }
@@ -43,7 +44,7 @@ const [state, dispatch] = myReducer(initialState);
 
 Javascript:
 
-```JS
+```js
 const initialState: State = Object.freeze({
   count: 0,
 });
@@ -63,3 +64,8 @@ const myReducer = createReducer(() => requestUpdate());
 
 const [state, dispatch] = myReducer(initialState);
 ```
+
+### More Reactive Hooks
+
+Checkout some more
+[reactive hooks](https://github.com/taylor-vann/somehooks#reactive-hooks)

@@ -31,4 +31,4 @@ const createState: CreateState = <T>(requestUpdate: RequestUpdate) => {
 
 export {createState};
 
-export type {RequestUpdate};
+export type{RequestUpdate};

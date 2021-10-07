@@ -38,3 +38,7 @@ same set of identities between executions of a callback.
 
 Hooks use this change to "recognize" when updates should occur. Usually this
 results the execution of an expensive memoized function.
+
+### More Hooks
+
+Checkout some more [hooks](https://github.com/taylor-vann/somehooks)

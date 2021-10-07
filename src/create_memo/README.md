@@ -2,11 +2,11 @@
 
 ## CreateMemo
 
-All hooks are based on the _memo_ pattern.
+All hooks are based on the *memo* pattern.
 
 Typescript:
 
-```TS
+```ts
 const myMemo = createMemo<number>()
 
 const myCachedValue = myMemo(() => {
@@ -16,10 +16,15 @@ const myCachedValue = myMemo(() => {
 
 Javascript:
 
-```JS
+```js
 const myMemo = createMemo()
 
 const myCachedValue = myMemo(() => {
   return calculateExpensiveNumber();
 }, ["when", "identities", "change"])
 ```
+
+### More Passive Hooks
+
+Checkout some more
+[passive hooks](https://github.com/taylor-vann/somehooks#passive-hooks)
