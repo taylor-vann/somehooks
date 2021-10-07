@@ -40,8 +40,8 @@ Keep in mind, reactive hooks can cause infinite loops.
 
 SomeHooks includes the following reactive hooks:
 
-*   [createState]("./src/create_state/README.md")
-*   [createReducer]("./src/create_reducer/README.md")
+*   [createState](./src/create_state/README.md)
+*   [createReducer](./src/create_reducer/README.md)
 
 ### Custom Hooks
 
