@@ -7,7 +7,7 @@ A collection of framework agnostic hooks.
 *SomeHooks* manages state and side-effects in functional pipelines and works
 well with asyncronous and callback-driven environments.
 
-Unlike other hooks, *SomeHooks* do not depend on ordering, location, or scope.
+Unlike other libraries, *SomeHooks* do not depend on order, location, or scope.
 
 They can be used anywhere.
 
@@ -19,7 +19,7 @@ There are three categories of hooks:
 *   reactive
 *   custom
 
-All hooks are based on the [createMemo]("./src/create_memo/README.md") pattern.
+All hooks are based on the [createMemo](./src/create_memo/README.md) pattern.
 
 ### Passive hooks
 
@@ -27,10 +27,10 @@ Most Hooks are passive hooks and cache the result of an expensive operation.
 
 SomeHooks includes the following passive hooks:
 
-*   [createCallback]("./src/create_callback/README.md")
-*   [createEffect]("./src/create_effect/README.md")
-*   [createMemo]("./src/create_memo/README.md")
-*   [createSelector]("./src/create_selector/README.md")
+*   [createCallback](./src/create_callback/README.md)
+*   [createEffect](./src/create_effect/README.md)
+*   [createMemo](./src/create_memo/README.md)
+*   [createSelector](./src/create_selector/README.md)
 
 ### Reactive Hooks
 
@@ -47,14 +47,15 @@ SomeHooks includes the following reactive hooks:
 
 Passive and reactive hooks can be combined to create custom hooks.
 
-While other environments leverage incredible feats of transpilation to use hooks
-alongside components, *SomeHooks* is scoped to the browser or nodejs and
-requires a more declarative and factory-driven approach.
+While other environments require transpilation to use hooks alongside
+components, *SomeHooks* is scoped to the browser. It requires a more declarative
+and factory-driven approach.
 
-Keep in mind: custom hooks are potentially comprised of reactive hooks,
-so custom hooks can cause infinite loops.
+Keep in mind: custom hooks are potentially comprised of reactive hooks, so
+custom hooks can cause infinite loops.
 
-In the example below, a custom hooks factory returns a custom hook function.
+A custom hooks should factory return a custom hook function. In the example
+below, the `createClock` factory returns a `useClock` hook.
 
 Typescript:
 
@@ -110,8 +111,11 @@ const createClock = (requestUpdate) => {
 
 ### Webcomponents
 
-Here is an example of using Lit with a slightly modified version of the
-`createClock` example above:
+Custom hooks can isolate complicated logic in webcomponents to a single function
+call.
+
+Below is a slightly modified version of the `createClock` factory example found
+above. It accounts for the `isConnected` event found in Webcomponents.
 
 Typescript:
 
@@ -145,16 +149,6 @@ const createClock = (requestUpdate: RequestUpdate) => {
     return state;
   }
 }
-
-class MyClock extends LitElement {
-  useClock = createClock(this.requestUpdate);
-
-  render() {
-    const timestring = this.useClock(this.isConnected);
-
-    return html`<p>{timestring}</p>`;
-  }
-}
 ```
 
 Javascript:
@@ -167,7 +161,7 @@ const createClock = (requestUpdate) => {
   const clockState = createState(requestUpdate);
   const clockEffect = createEffect();
 
-  return ({isConnected}) => {
+  return (isConnected) => {
     const [state, setState] = clockState(new Date().toLocaleTimeString());
 
     clockEffect(() => {
@@ -187,12 +181,16 @@ const createClock = (requestUpdate) => {
     return state;
   }
 }
+```
 
+The `createClock` hook above is used in the example Webcomponent below.
+
+```
 class MyClock extends LitElement {
   useClock = createClock(this.requestUpdate);
 
   render() {
-    const timestring = this.useClock({isConnected: this.isConnected});
+    const timestring = this.useClock(this.isConnected);
 
     return html`<p>{timestring}</p>`;
   }
