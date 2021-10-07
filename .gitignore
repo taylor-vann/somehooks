@@ -1,0 +1,6 @@
+# SOMEHOOKS GITIGNORE
+
+# generated files
+dist/
+node_modules/
+.DS_STORE

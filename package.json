@@ -1,0 +1,20 @@
+{
+  "name": "somehooks",
+  "description": "SomeHooks",
+  "license": "Apache-2.0",
+  "main": "./dist/hooks.js",
+  "types": "./dist/hooks.d.ts",
+  "scripts": {
+    "install": "tsc --build ./src/tsconfig.json",
+  },
+  "devDependencies": {
+    "karma": "^4.0.1",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-firefox-launcher": "^1.0.0",
+    "karma-jasmine": "^4.0.1",
+    "karma-mocha-reporter": "^2.2.5",
+    "karma-sauce-launcher": "^2.0.2",
+    "karma-sourcemap-loader": "^0.3.7",
+    "typescript": "^4.3.5"
+  }
+}
