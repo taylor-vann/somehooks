@@ -3,17 +3,17 @@
  * Copyright (c) 2021 The SomeHooks Project Authors. All rights reserved.
  */
 
-import {createSelector} from './create_selector';
+import {createSelector} from './create_selector.js';
 
 interface State {
   count: number;
 }
 
-const customComparator = <T>(fakeResult: boolean) => () => {
+const customComparator = (fakeResult: boolean) => () => {
   return fakeResult;
 };
 
-describe('createMemo', () => {
+describe('createSelector', () => {
   const defaultState: State = {
     count: 13,
   };
@@ -22,6 +22,8 @@ describe('createMemo', () => {
     const useSelector = createSelector<State, number>(() => {
       return defaultState;
     });
+
+    defaultState.count = 13;
 
     const count = useSelector((state) => {
       return state.count;
@@ -49,16 +51,18 @@ describe('createMemo', () => {
       return defaultState;
     });
 
+    defaultState.count = 19;
+
     let count = useSelector((state) => {
       return state.count;
     }, customComparator(false));
 
-    defaultState.count = 19;
+    defaultState.count = 17;
 
     count = useSelector((state) => {
       return state.count;
     }, customComparator(true));
 
-    expect(count).toBe(17);
+    expect(count).toBe(19);
   });
 });

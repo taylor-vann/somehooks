@@ -3,7 +3,7 @@
  * Copyright (c) 2021 The SomeHooks Project Authors. All rights reserved.
  */
 
-import {createCallback} from './create_callback';
+import {createCallback} from './create_callback.js';
 
 describe('createCallback', () => {
   it('returns new callback with empty arguments', () => {

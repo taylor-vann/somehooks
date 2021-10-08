@@ -3,7 +3,7 @@
  * Copyright (c) 2021 The SomeHooks Project Authors. All rights reserved.
  */
 
-import {createReducer} from './create_reducer';
+import {createReducer} from './create_reducer.js';
 
 interface IncrementAction {
   type: 'INCREMENT';

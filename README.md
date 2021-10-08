@@ -15,9 +15,9 @@ They can be used anywhere.
 
 There are three categories of hooks:
 
-*   passive
-*   reactive
-*   custom
+-   passive
+-   reactive
+-   custom
 
 All hooks are based on the [createMemo](./src/create_memo/README.md) pattern.
 
@@ -27,10 +27,10 @@ Most Hooks are passive hooks and cache the result of an expensive operation.
 
 SomeHooks includes the following passive hooks:
 
-*   [createCallback](./src/create_callback/README.md)
-*   [createEffect](./src/create_effect/README.md)
-*   [createMemo](./src/create_memo/README.md)
-*   [createSelector](./src/create_selector/README.md)
+-   [createCallback](./src/create_callback/README.md)
+-   [createEffect](./src/create_effect/README.md)
+-   [createMemo](./src/create_memo/README.md)
+-   [createSelector](./src/create_selector/README.md)
 
 ### Reactive Hooks
 
@@ -40,8 +40,8 @@ Keep in mind, reactive hooks can cause infinite loops.
 
 SomeHooks includes the following reactive hooks:
 
-*   [createState](./src/create_state/README.md)
-*   [createReducer](./src/create_reducer/README.md)
+-   [createState](./src/create_state/README.md)
+-   [createReducer](./src/create_reducer/README.md)
 
 ### Custom Hooks
 
@@ -60,7 +60,7 @@ below, the `createClock` factory returns a `useClock` hook.
 Typescript:
 
 ```ts
-import type {RequestUpdate} from "somehooks";
+import type { RequestUpdate } from "somehooks";
 
 const createClock = (requestUpdate: RequestUpdate) => {
   const clockState = createState<string>(requestUpdate);
@@ -72,16 +72,16 @@ const createClock = (requestUpdate: RequestUpdate) => {
     clockEffect(() => {
       const stub = setInterval(() => {
         setState(new Date().toLocaleTimeString());
-      }, 1000)
+      }, 1000);
 
       return () => {
         clearInterval(stub);
-      }
+      };
     }, []);
 
     return state;
-  }
-}
+  };
+};
 ```
 
 Javascript:
@@ -97,16 +97,16 @@ const createClock = (requestUpdate) => {
     clockEffect(() => {
       const stub = setInterval(() => {
         setState(new Date().toLocaleTimeString());
-      }, 1000)
+      }, 1000);
 
       return () => {
         clearInterval(stub);
-      }
+      };
     }, []);
 
     return state;
-  }
-}
+  };
+};
 ```
 
 ### Webcomponents
@@ -120,10 +120,10 @@ above. It accounts for the `isConnected` event found in Webcomponents.
 Typescript:
 
 ```ts
-import {LitElement, html} from "lit";
-import {createState, createEffect} from "somehooks";
+import { LitElement, html } from "lit";
+import { createState, createEffect } from "somehooks";
 
-import type {RequestUpdate} from "somehooks"
+import type { RequestUpdate } from "somehooks";
 
 const createClock = (requestUpdate: RequestUpdate) => {
   const clockState = createState<string>(requestUpdate);
@@ -143,19 +143,19 @@ const createClock = (requestUpdate: RequestUpdate) => {
 
       return () => {
         clearInterval(stub);
-      }
+      };
     }, [isConnected]);
 
     return state;
-  }
-}
+  };
+};
 ```
 
 Javascript:
 
 ```ts
-import {LitElement, html} from "lit";
-import {createState, createEffect} from "somehooks";
+import { LitElement, html } from "lit";
+import { createState, createEffect } from "somehooks";
 
 const createClock = (requestUpdate) => {
   const clockState = createState(requestUpdate);
@@ -175,12 +175,12 @@ const createClock = (requestUpdate) => {
 
       return () => {
         clearInterval(stub);
-      }
+      };
     }, [isConnected]);
 
     return state;
-  }
-}
+  };
+};
 ```
 
 The `createClock` hook above is used in the example Webcomponent below.

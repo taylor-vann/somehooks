@@ -3,7 +3,7 @@
     "composite": true,
     "declaration": true,
     "importHelpers": true,
-    "lib": ["es2017", "dom", "dom.iterable"],
+    "lib": ["es2017"],
     "module": "es2015",
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
@@ -12,13 +12,12 @@
     "noImplicitThis": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "outDir": "./dist",
+    "outDir": "../test",
     "sourceMap": true,
     "strict": true,
     "strictNullChecks": true,
-    "target": "es2017",
+    "target": "es2017"
   },
-  "include": [
-    "*.ts"
-  ],
+  "exclude": ["./**/**.test.ts"]
 }
+

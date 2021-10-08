@@ -3,13 +3,13 @@
  * Copyright (c) 2021 The SomeHooks Project Authors. All rights reserved.
  */
 
-import {createEffect} from './create_effect';
+import {createEffect} from './create_effect.js';
 
 type EffectState = 'uninitialized'|'initialized'|'affected';
 
 let affected: EffectState = 'uninitialized';
 
-describe('createCallback', () => {
+describe('createEffect', () => {
   beforeEach(() => {
     affected = 'uninitialized';
   });

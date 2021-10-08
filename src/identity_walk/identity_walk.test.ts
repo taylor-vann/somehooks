@@ -3,7 +3,7 @@
  * Copyright (c) 2021 The SomeHooks Project Authors. All rights reserved.
  */
 
-import {hasChanged} from './identity_walk';
+import {hasChanged} from './identity_walk.js';
 
 describe('hasChanged', () => {
   it('returns false with empty arguments', () => {

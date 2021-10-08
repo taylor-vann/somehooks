@@ -3,7 +3,7 @@
  * Copyright (c) 2021 The SomeHooks Project Authors. All rights reserved.
  */
 
-import {hasChanged} from '../identity_walk/identity_walk';
+import {hasChanged} from '../identity_walk/identity_walk.js';
 
 type ComposedCallback<C extends Function> =
     (composition: C, identities?: unknown[]) => C;

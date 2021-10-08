@@ -6,5 +6,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Unreleased
 
+## [0.1.0] - 2021-10-8
+- Add more explicit tests
+
 ## [0.1.0] - 2021-09-29
-- Initial WIP of components
+- Initial WIP of SomeHooks

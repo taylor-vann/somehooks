@@ -3,7 +3,7 @@
  * Copyright (c) 2021 The SomeHooks Project Authors. All rights reserved.
  */
 
-import {createMemo} from './create_memo';
+import {createMemo} from './create_memo.js';
 
 describe('createMemo', () => {
   it('returns new value with empty arguments', () => {

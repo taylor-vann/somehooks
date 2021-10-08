@@ -3,7 +3,7 @@
  * Copyright (c) 2021 The SomeHooks Project Authors. All rights reserved.
  */
 
-import {createState} from './create_state';
+import {createState} from './create_state.js';
 
 describe('createState', () => {
   let updatedCount: number = 0;

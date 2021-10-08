@@ -3,7 +3,7 @@
  * Copyright (c) 2021 The SomeHooks Project Authors. All rights reserved.
  */
 
-import {hasChanged} from '../identity_walk/identity_walk';
+import {hasChanged} from '../identity_walk/identity_walk.js';
 
 type ComposeEffect = (onTeardown: Function, identities?: unknown[]) => void;
 type CreateEffect = () => ComposeEffect;
