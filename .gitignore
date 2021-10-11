@@ -1,7 +1,8 @@
-# SOMEHOOKS GITIGNORE
+# SOMEHOOKS
 
 # generated files
 node_modules/
+dist/
 .DS_STORE
 
 # tests
