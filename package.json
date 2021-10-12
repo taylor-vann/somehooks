@@ -1,15 +1,15 @@
 {
   "name": "somehooks",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Framework agnostic hooks",
   "license": "Apache-2.0",
-  "main": "./dist/hooks.js",
+  "main": "./dist/somehooks.js",
   "type": "module",
-  "types": "./dist/hooks.d.ts",
+  "types": "./dist/somehooks.d.ts",
   "scripts": {
     "install": "tsc --build ./src/tsconfig.json",
     "lint": "prettier --write ./",
-    "test": "tsc --build ./src/tsconfig.test.json && karma start ./karma.conf.cjs"
+    "test": "tsc --build ./src/tsconfig.test.json && karma start ./karma.conf.cjs --single-run"
   },
   "devDependencies": {
     "@open-wc/karma-esm": "^2.4.3",
