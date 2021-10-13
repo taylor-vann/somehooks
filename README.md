@@ -187,7 +187,7 @@ The `createClock` hook above is used in the example Webcomponent below.
 
 ```
 class MyClock extends LitElement {
-  useClock = createClock(this.requestUpdate);
+  useClock = createClock(() => this.requestUpdate());
 
   render() {
     const timestring = this.useClock(this.isConnected);
