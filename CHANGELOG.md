@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Unreleased
 
+## [0.0.4] - 2021-10-11
+- Add arrow function to createClock example
+
 ## [0.0.3] - 2021-10-11
 - Add `.js` to somehoooks export
 

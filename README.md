@@ -192,7 +192,7 @@ class MyClock extends LitElement {
   render() {
     const timestring = this.useClock(this.isConnected);
 
-    return html`<p>{timestring}</p>`;
+    return html`<p>${timestring}</p>`;
   }
 }
 ```
