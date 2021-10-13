@@ -1,4 +1,4 @@
-# SOMEHOOKS gitignore
+# SOMEHOOKS npmignore
 
 # generated files
 node_modules/
@@ -7,5 +7,5 @@ node_modules/
 # tests
 test/
 
-# distribution
-dist/
+# source
+src/

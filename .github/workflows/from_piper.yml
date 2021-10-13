@@ -1,9 +1,9 @@
 name: SomeHooks CI
 on:
   push:
-    branches: [ dev ]
+    branches: [ from_piper ]
   pull_request:
-    branches: [ dev ]
+    branches: [ from_piper ]
 jobs:
   build:
     runs-on: ubuntu-latest
