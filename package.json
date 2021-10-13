@@ -1,6 +1,6 @@
 {
   "name": "somehooks",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Framework agnostic hooks",
   "license": "Apache-2.0",
   "main": "./dist/somehooks.js",
