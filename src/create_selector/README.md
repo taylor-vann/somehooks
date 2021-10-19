@@ -24,6 +24,38 @@ const selected = mySelector((state) => {
 });
 ```
 
+### Custom Comparators
+
+```ts
+const comparator: Comparator<ReturnType> = (setA, setB) => {
+  // returning true wil always register a change
+
+  return true;
+}
+
+const mySelector = createSelector<State, ReturnType>(() => getState());
+
+const selected = mySelector((state) => {
+  return state.some.nested.property;
+}, comparator);
+```
+
+Javascript:
+
+```js
+const comparator = (setA, setB) => {
+  // returning true wil always register a change
+
+  return true;
+}
+
+const mySelector = createSelector(() => getState());
+
+const selected = mySelector((state) => {
+  return state.some.nested.property;
+}, comparator);
+```
+
 ### More Passive Hooks
 
 Checkout some more

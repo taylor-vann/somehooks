@@ -11,13 +11,28 @@ Unlike other libraries, *SomeHooks* do not depend on order, location, or scope.
 
 They can be used anywhere.
 
+## Installation
+
+### NodeJS
+
+```
+npm i somehooks
+```
+
+### Deno
+
+```
+// @deno-types="https://cdn.skypack.dev/somehooks?dts"
+import * as SomeHooks from "https://cdn.skypack.dev/somehooks";
+```
+
 ### Types of Hooks
 
 There are three categories of hooks:
 
--   passive
--   reactive
--   custom
+-   [passive](#passive-hooks)
+-   [active](#active-hooks)
+-   [custom](#custom-hooks)
 
 All hooks are based on the [createMemo](./src/create_memo/README.md) pattern.
 
@@ -32,26 +47,26 @@ SomeHooks includes the following passive hooks:
 -   [createMemo](./src/create_memo/README.md)
 -   [createSelector](./src/create_selector/README.md)
 
-### Reactive Hooks
+### Active Hooks
 
-A reactive hook requests updates from a given call stack.
+A active hook requests updates from a given call stack.
 
-Keep in mind, reactive hooks can cause infinite loops.
+Keep in mind, active hooks can cause infinite loops.
 
-SomeHooks includes the following reactive hooks:
+SomeHooks includes the following active hooks:
 
 -   [createState](./src/create_state/README.md)
 -   [createReducer](./src/create_reducer/README.md)
 
 ### Custom Hooks
 
-Passive and reactive hooks can be combined to create custom hooks.
+Passive and active hooks can be combined to create custom hooks.
 
 While other environments require transpilation to use hooks alongside
 components, *SomeHooks* is scoped to the browser. It requires a more declarative
 and factory-driven approach.
 
-Keep in mind: custom hooks are potentially comprised of reactive hooks, so
+Keep in mind: custom hooks are potentially comprised of active hooks, so
 custom hooks can cause infinite loops.
 
 A custom hooks should factory return a custom hook function. In the example
@@ -185,7 +200,7 @@ const createClock = (requestUpdate) => {
 
 The `createClock` hook above is used in the example Webcomponent below.
 
-```
+```TS
 class MyClock extends LitElement {
   useClock = createClock(() => this.requestUpdate());
 

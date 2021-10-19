@@ -22,11 +22,11 @@ interface State {
   count: number;
 }
 
-const initialState: State = Object.freeze({
+const defaultState: State = Object.freeze({
   count: 0,
 });
 
-const reducer = (state: State = initialState, action: Actions) => {
+const reducer = (state: State = defaultState, action: Actions) => {
   switch (action.type) {
     case 'INCREMENT':
       return {count: state.count + 1};
@@ -39,17 +39,17 @@ const reducer = (state: State = initialState, action: Actions) => {
 
 const myReducer = createReducer<State, Actions>(() => requestUpdate());
 
-const [state, dispatch] = myReducer(initialState);
+const [state, dispatch] = myReducer(reducer, defaultState);
 ```
 
 Javascript:
 
 ```js
-const initialState: State = Object.freeze({
+const defaultState: State = Object.freeze({
   count: 0,
 });
 
-const reducer = (state = initialState, action) => {
+const reducer = (state = defaultState, action) => {
   switch (action.type) {
     case 'INCREMENT':
       return {count: state.count + 1};
@@ -62,7 +62,7 @@ const reducer = (state = initialState, action) => {
 
 const myReducer = createReducer(() => requestUpdate());
 
-const [state, dispatch] = myReducer(initialState);
+const [state, dispatch] = myReducer(reducer, defaultState);
 ```
 
 ### More Reactive Hooks
